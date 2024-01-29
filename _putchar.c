@@ -22,7 +22,7 @@ return (str - a);
 * Return: 1 if success, -1 is returned on error
 */
 
-int _putchar(int c)
+int _putchar(char c)
 {
 static int i;
 static char buf[OUTPUT_BUF_SIZE];

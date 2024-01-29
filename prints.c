@@ -8,13 +8,13 @@
 * Return: number of bytes printed
 */
 
-int print_fromto(char *start, char *end, int except)
+int print_fromto(char *start, char *end, char *except)
 {
 	int sum = 0;
 
 	while (start < end)
 	{
-		if (*start != except)
+		if  (*start != *except)
 			sum += _putchar(*start);
 		start++;
 	}

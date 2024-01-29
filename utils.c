@@ -20,7 +20,7 @@ specifier_t specs[] = {
 	{"x", print_hex},
 	{"b", print_binary},
 	{"X", print_hex_upper},
-	{"S", print_big_s},
+	{"S", print_S},
 	{"r", print_rev},
 	{"R", print_rot13},
 	{NULL, NULL}
@@ -115,7 +115,7 @@ return (i);
 * Return: is width valid
 */
 
-char *get_width(char *s, va_list args, params_t *params)
+char *get_width(char *s, params_t *params, va_list args)
 {
 int d = 0;
 if (*s == '*')
