@@ -16,8 +16,7 @@
 #define PARAMS {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
 #define CONVERT_LOWER 1
-#define CONVERT_UPPER 2
-#define CONVERT_UNSIGNED 4
+#define CONVERT_UNSIGNED 2
 
 
 /**
@@ -63,8 +62,6 @@ typedef struct specifier
 
 int _putchar(char c);
 int _puts(char *str);
-int print_pointer(va_list args, params_t *params);
-int print_custom(va_list args, params_t *params);
 
 /* type_printers.c */
 int print_char(va_list args, params_t *params);
@@ -75,7 +72,6 @@ int print_S(va_list args, params_t *params);
 
 /* convertors.c */
 char *convert(long int num, int base, int flags, params_t *params);
-int print_unsigned(va_list args, params_t *params);
 int print_unsigned(va_list args, params_t *params);
 int print_address(va_list args, params_t *params);
 int print_hex(va_list args, params_t *params);

@@ -32,18 +32,16 @@ int print_fromto(char *start, char *end, char *except)
 int print_rev(va_list args, params_t *params)
 {
 int sum = 0;
-
 int len;
-
 char *str = va_arg(args, char *);
-
 (void)params;
 if (str)
 {
-for (len = 0; str[len]; len++)
-;
-for (len -= 1; len >= 0; len--)
-sum += _putchar(str[len]);
+for (len = 0; *str; str++)
+len++;
+str--;
+for (; len > 0; len--, str--)
+sum += _putchar(*str);
 }
 return (sum);
 }
