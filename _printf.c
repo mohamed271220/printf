@@ -17,12 +17,8 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
-	{
 		return (-1);
-	}
-
 	for (ptr = (char *)format; *ptr ; ptr++)
 	{
 		init_params(&params, args);
@@ -33,6 +29,11 @@ int _printf(const char *format, ...)
 		}
 		start = ptr;
 		ptr++;
+		if (*ptr == '%')
+		{
+			sum += _putchar('%');
+			continue;
+		}
 		while (get_flags(ptr, &params))
 			ptr++;
 		ptr = get_width(ptr, &params, args);
